@@ -1,0 +1,32 @@
+# Troubleshooting Guide - This document lists the issues encountered during the project and the steps taken to resolve them.
+
+## 1. Jenkins Build Failed
+
+### Issue - The Jenkins build failed during the Maven build stage.
+### Cause - Maven was not configured correctly in Jenkins.
+### Resolution
+- Configured Maven under **Manage Jenkins → Global Tool Configuration**.
+- Verified the Maven installation.
+- Re-ran the build successfully.
+
+---
+
+## 2. Tomcat Application Not Accessible
+
+### Issue - The application returned a 404 error after deployment.
+### Cause - The WAR file was not deployed correctly.
+### Resolution
+- Verified the WAR file was present in the `webapps` directory.
+- Restarted Tomcat.
+- Checked the Tomcat logs for deployment errors.
+
+---
+
+## 3. Nexus Service Failed to Start
+
+### Issue - Nexus did not start successfully.
+### Cause - The installed Java version was unsupported.
+### Resolution
+- Verified the Java version using `java -version`.
+- Installed a supported JDK.
+- Started Nexus again.
