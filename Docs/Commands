@@ -1,0 +1,45 @@
+# Commands Used - This document contains the commands used to configure and deploy the CI/CD pipeline.
+
+## System Information -
+hostname
+hostnamectl
+ip addr
+java -version
+
+## Git Commands - 
+git clone <repository-url>
+git status
+git add .
+git commit -m "Initial commit"
+git push origin main
+
+## Maven Commands
+mvn clean
+mvn compile
+mvn test
+mvn package
+mvn deploy
+
+## Jenkins Commands
+systemctl start jenkins
+systemctl stop jenkins
+systemctl restart jenkins
+systemctl status jenkins
+
+## Nexus Commands
+systemctl start nexus
+systemctl stop nexus
+systemctl restart nexus
+systemctl status nexus
+
+## Tomcat Commands
+./startup.sh
+./shutdown.sh
+
+## Linux Commands
+pwd
+ls -l
+cd
+mkdir
+chmod
+chown
