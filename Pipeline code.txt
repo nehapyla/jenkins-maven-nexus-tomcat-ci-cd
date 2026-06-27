@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    tools{
+        maven 'Maven'
+    }
+    stages {
+        stage('Code') {
+            steps {
+                echo 'Coded Successfully'
+                git 'https://github.com/nehapyla/one.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Artifact') {
+            steps {
+                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-8.7.3.war', type: 'war']], credentialsId: 'nexus', groupId: 'in.javahome', nexusUrl: '16.171.45.170:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'myrepo', version: '8.7.3'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://13.51.255.217:8080/')], contextPath: 'myapp', war: 'target/*.war'
+            }
+        }
+    }
+}
