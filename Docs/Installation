@@ -1,0 +1,13 @@
+# Installation Steps
+
+Install Java
+Install Git
+Install Maven
+Install Jenkins
+Install Nexus
+Create a hosted repository in Nexus
+Install Tomcat
+Configure Tomcat Manager
+Configure Maven settings.xml for Nexus authentication
+Configure Jenkins credentials
+Create the Jenkins job
